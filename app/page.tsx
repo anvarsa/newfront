@@ -9,7 +9,8 @@ import Sidebar from '@/components/Sidebar';
 
 export default function HomePage() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6">
+<div className="w-full px-4 py-6">
+
       {/* 1. Instagram Stories */}
       <Stories />
 
