@@ -34,10 +34,9 @@ export default function ArticlesSection() {
 
   return (
     <section className="py-10">
-      {/* Sarlavha */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
-          <span className="text-xs font-mono font-bold text-amber-600 tracking-widest uppercase">
+          <span className="text-xs font-mono font-bold text-emerald-700 tracking-widest uppercase">
             — MAQOLALAR
           </span>
           <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tight mt-1">
@@ -49,16 +48,14 @@ export default function ArticlesSection() {
         </p>
       </div>
 
-      {/* Postcardlar katakchasi (Grid) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {articles.map((item) => (
           <div 
             key={item.id}
-            className="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between"
+            className="bg-white border border-emerald-900/10 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between"
           >
             <div>
-              {/* Rasm yoki To'q Blok */}
-              <div className="h-44 bg-[#1e3a3a] flex items-center justify-center relative overflow-hidden">
+              <div className="h-44 bg-[#064e3b] flex items-center justify-center relative overflow-hidden">
                 {item.image ? (
                   <img 
                     src={item.image} 
@@ -72,9 +69,8 @@ export default function ArticlesSection() {
                 )}
               </div>
 
-              {/* Matn qismi */}
               <div className="p-5">
-                <span className="text-[10px] font-mono font-bold text-slate-400 tracking-wider uppercase block mb-2">
+                <span className="text-[10px] font-mono font-bold text-emerald-700 tracking-wider uppercase block mb-2">
                   {item.tag}
                 </span>
                 <h3 className="font-bold text-slate-900 text-base leading-snug mb-2">
@@ -86,11 +82,10 @@ export default function ArticlesSection() {
               </div>
             </div>
 
-            {/* Link */}
             <div className="px-5 pb-5 pt-1">
               <Link 
                 href={`/blog/${item.id}`} 
-                className="inline-flex items-center text-xs font-bold text-slate-800 hover:text-amber-600 transition gap-1"
+                className="inline-flex items-center text-xs font-bold text-slate-800 hover:text-emerald-600 transition gap-1"
               >
                 Batafsil o'qish &rarr;
               </Link>

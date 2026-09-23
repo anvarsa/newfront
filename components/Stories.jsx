@@ -4,7 +4,6 @@ import { useState } from 'react';
 export default function Stories() {
   const [activeStory, setActiveStory] = useState(null);
 
-  // Directus CMS ulaganda bu ma'lumotlar bazadan keladi
   const stories = [
     {
       id: 1,
@@ -23,16 +22,15 @@ export default function Stories() {
   ];
 
   return (
-    <div className="py-4 border-b border-slate-200/60 mb-6 overflow-x-auto">
-      <div className="flex gap-6 items-center">
+    <div className="py-3 border-b border-emerald-900/10 mb-6 overflow-x-auto scrollbar-none">
+      <div className="flex gap-5 items-center">
         {stories.map((story) => (
           <button
             key={story.id}
             onClick={() => setActiveStory(story)}
-            className="flex flex-col items-center gap-1.5 group cursor-pointer focus:outline-none"
+            className="flex flex-col items-center gap-1.5 group cursor-pointer focus:outline-none shrink-0"
           >
-            {/* Rangli halqa border */}
-            <div className="p-[2.5px] rounded-full bg-gradient-to-tr from-amber-500 via-emerald-600 to-amber-400 group-hover:scale-105 transition duration-200">
+            <div className="p-[2.5px] rounded-full bg-gradient-to-tr from-emerald-600 via-teal-500 to-emerald-400 group-hover:scale-105 transition duration-200 shadow-sm">
               <div className="p-0.5 bg-white rounded-full">
                 <img
                   src={story.thumb}
@@ -41,14 +39,13 @@ export default function Stories() {
                 />
               </div>
             </div>
-            <span className="text-[11px] font-mono text-slate-500 font-medium">
+            <span className="text-[11px] font-mono text-slate-600 font-medium">
               {story.date}
             </span>
           </button>
         ))}
       </div>
 
-      {/* Modal - To'liq ekranda (Fullscreen) ochiladigan Story */}
       {activeStory && (
         <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
           <button
@@ -61,7 +58,7 @@ export default function Stories() {
           <div className="relative w-full max-w-sm h-[80vh] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between p-4">
             <div className="flex items-center justify-between text-white text-xs font-mono border-b border-white/10 pb-2 z-10">
               <span>{activeStory.title}</span>
-              <span className="text-slate-400">{activeStory.date}</span>
+              <span className="text-emerald-400">{activeStory.date}</span>
             </div>
 
             <img

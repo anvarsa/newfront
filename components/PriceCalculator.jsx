@@ -23,7 +23,7 @@ export default function PriceCalculator() {
   return (
     <section className="py-10">
       <div className="mb-6">
-        <span className="text-xs font-mono font-bold text-amber-600 tracking-widest uppercase">
+        <span className="text-xs font-mono font-bold text-emerald-700 tracking-widest uppercase">
           — INTERAKTIV PRAYS-LIST
         </span>
         <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tight mt-1">
@@ -31,7 +31,6 @@ export default function PriceCalculator() {
         </h2>
       </div>
 
-      {/* Model tanlash tugmalari */}
       <div className="flex flex-wrap gap-2 mb-6">
         {cars.map((car) => (
           <button
@@ -39,8 +38,8 @@ export default function PriceCalculator() {
             onClick={() => setSelectedCar(car)}
             className={`px-5 py-2.5 rounded-xl text-sm font-bold transition ${
               selectedCar === car
-                ? 'bg-[#181e24] text-white shadow-md'
-                : 'bg-white text-slate-700 border border-slate-200 hover:border-slate-400'
+                ? 'bg-emerald-600 text-white shadow-md'
+                : 'bg-white text-slate-700 border border-slate-200 hover:border-emerald-400'
             }`}
           >
             {car}
@@ -48,10 +47,9 @@ export default function PriceCalculator() {
         ))}
       </div>
 
-      {/* To'q rangli banner va xizmatlar oynasi */}
-      <div className="bg-[#181e24] text-white rounded-3xl p-6 md:p-8 shadow-xl">
-        <div className="bg-[#212830] rounded-2xl p-12 text-center mb-8 border border-slate-700/50">
-          <h1 className="text-5xl md:text-7xl font-black tracking-wider text-amber-500 uppercase">
+      <div className="bg-slate-900 text-white rounded-3xl p-6 md:p-8 shadow-xl border border-slate-800">
+        <div className="bg-slate-950 rounded-2xl p-10 text-center mb-8 border border-slate-800">
+          <h1 className="text-4xl md:text-6xl font-black tracking-wider text-emerald-400 uppercase">
             {selectedCar}
           </h1>
         </div>
@@ -60,7 +58,7 @@ export default function PriceCalculator() {
           <h3 className="text-base font-bold uppercase tracking-wider text-slate-200">
             {selectedCar} — XIZMATLAR VA NARXLAR
           </h3>
-          <span className="text-[11px] font-mono text-amber-500 font-bold uppercase">
+          <span className="text-[11px] font-mono text-emerald-400 font-bold uppercase">
             DIAGNOSTIKA: YAKUNLANDI
           </span>
         </div>
@@ -72,7 +70,7 @@ export default function PriceCalculator() {
                 <h4 className="font-bold text-slate-100 text-base">{srv.name}</h4>
                 <p className="text-xs text-slate-400 mt-0.5">{srv.desc}</p>
               </div>
-              <span className="text-lg font-black text-amber-400 whitespace-nowrap">
+              <span className="text-lg font-black text-emerald-400 whitespace-nowrap">
                 {srv.price}
               </span>
             </div>

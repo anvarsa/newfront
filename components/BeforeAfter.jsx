@@ -2,7 +2,6 @@
 import { useState } from 'react';
 
 export default function BeforeAfter() {
-  // 4 ta juftlik (jami 8 ta rasm: Oldin va Keyin)
   const items = [
     {
       id: 1,
@@ -31,11 +30,10 @@ export default function BeforeAfter() {
   ];
 
   return (
-    <section className="py-10 bg-[#e8e6e1] rounded-3xl my-8 p-6 md:p-8">
-      {/* Sarlavha */}
+    <section className="py-10 bg-[#eef6f2] rounded-3xl my-8 p-6 md:p-8 border border-emerald-900/10">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
-          <span className="text-xs font-mono font-bold text-amber-600 tracking-widest uppercase">
+          <span className="text-xs font-mono font-bold text-emerald-700 tracking-widest uppercase">
             — NATIJALAR
           </span>
           <h2 className="text-4xl font-black text-slate-900 uppercase tracking-tight mt-1 font-heading">
@@ -47,7 +45,6 @@ export default function BeforeAfter() {
         </p>
       </div>
 
-      {/* Grid Usulida 4 ta Kartochka (Jami 8 ta rasm) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {items.map((item) => (
           <BeforeAfterCard key={item.id} item={item} />
@@ -57,7 +54,6 @@ export default function BeforeAfter() {
   );
 }
 
-// Har bir kartochka uchun interaktiv surish komponenti
 function BeforeAfterCard({ item }) {
   const [sliderPos, setSliderPos] = useState(50);
 
@@ -69,7 +65,7 @@ function BeforeAfterCard({ item }) {
   };
 
   return (
-    <div className="bg-white p-3 rounded-2xl border border-slate-200/80 shadow-sm">
+    <div className="bg-white p-3 rounded-2xl border border-emerald-900/10 shadow-sm">
       <div
         className="relative w-full h-64 rounded-xl overflow-hidden select-none cursor-ew-resize"
         onMouseMove={handleMove}
@@ -80,44 +76,40 @@ function BeforeAfterCard({ item }) {
           setSliderPos(Math.max(0, Math.min(100, (x / rect.width) * 100)));
         }}
       >
-        {/* KEYIN (Yangi Rasm) */}
         <img
           src={item.afterImg}
           alt="Keyin"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <span className="absolute bottom-3 right-3 bg-black/70 text-amber-400 font-mono text-[10px] font-bold px-2 py-1 rounded-md z-10">
+        <span className="absolute bottom-3 right-3 bg-black/70 text-emerald-400 font-mono text-[10px] font-bold px-2 py-1 rounded-md z-10">
           KEYIN
         </span>
 
-        {/* OLDIN (Eski Rasm - Qirqiladigan) */}
         <div
-          className="absolute top-0 left-0 bottom-0 overflow-hidden border-r-2 border-amber-500"
+          className="absolute top-0 left-0 bottom-0 overflow-hidden border-r-2 border-emerald-500"
           style={{ width: `${sliderPos}%` }}
         >
           <img
             src={item.beforeImg}
             alt="Oldin"
             className="absolute top-0 left-0 h-full max-w-none"
-            style={{ width: '600px' }} // Kartochka kengligiga mos
+            style={{ width: '600px' }}
           />
           <span className="absolute bottom-3 left-3 bg-black/70 text-white font-mono text-[10px] font-bold px-2 py-1 rounded-md z-10">
             OLDIN
           </span>
         </div>
 
-        {/* Suriladigan Chiziq va Tugma */}
         <div
-          className="absolute top-0 bottom-0 w-0.5 bg-amber-500 z-20 pointer-events-none"
+          className="absolute top-0 bottom-0 w-0.5 bg-emerald-500 z-20 pointer-events-none"
           style={{ left: `${sliderPos}%` }}
         >
-          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-7 h-7 bg-amber-500 text-slate-950 font-bold rounded-full flex items-center justify-center text-[10px] shadow-md">
+          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-7 h-7 bg-emerald-500 text-white font-bold rounded-full flex items-center justify-center text-[10px] shadow-md">
             ↔
           </div>
         </div>
       </div>
 
-      {/* Kartochka ostidagi nomi */}
       <div className="pt-3 px-1">
         <h4 className="font-bold text-slate-900 text-sm">{item.title}</h4>
       </div>

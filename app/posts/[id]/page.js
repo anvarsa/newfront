@@ -1,4 +1,4 @@
-import directus from '@/lib/directus';
+import { directus } from '@/lib/directus';
 import { readItem } from '@directus/sdk';
 
 export default async function PostDetailPage({ params }) {
