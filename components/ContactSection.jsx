@@ -30,7 +30,7 @@ export default function ContactSection() {
               <span className="text-xl">✈️</span>
               <div>
                 <span className="text-xs font-bold text-slate-900 block">Telegram</span>
-                <span className="text-xs text-slate-500">https://t.me/avtochexol</span>
+                <span className="text-xs text-slate-500">https://t.me/avtochexoluz1</span>
               </div>
             </div>
 
@@ -46,7 +46,7 @@ export default function ContactSection() {
           <div className="bg-white p-2 border border-emerald-900/10 rounded-3xl overflow-hidden shadow-sm h-64">
             <iframe
               title="Google Map Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50840.42845232742!2d67.22891962383838!3d37.30561561081512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f352bf656a82741%3A0xb3a0b5368a25d214!2sAngor%2C%20Surxondaryo%20Region%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1710000000000!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792.3877873859369!2d67.16983813591607!3d37.40044585330727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f3547f1bd448b2f%3A0x59491433187a334e!2sAVTOCHEXOL.UZ!5e0!3m2!1sru!2s!4v1790149841191!5m2!1sru!2s"
               width="100%"
               height="100%"
               style={{ border: 0, borderRadius: '1rem' }}

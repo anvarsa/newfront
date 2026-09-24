@@ -26,10 +26,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2">
           <div className="bg-emerald-600 text-white p-2 rounded-xl font-black text-xl tracking-wider shadow-sm">
-            ANGOR
+            AVTO
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-slate-900 text-lg leading-tight tracking-tight">SERVIS USTA</span>
+            <span className="font-bold text-slate-900 text-lg leading-tight tracking-tight">CHEXOL.UZ</span>
             <span className="text-[10px] text-emerald-700 tracking-widest uppercase font-mono">Professional Ustaxona</span>
           </div>
         </Link>
@@ -48,7 +48,7 @@ export default function Header() {
             href="/sorov" 
             className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2.5 rounded-xl text-sm shadow-sm transition active:scale-95"
           >
-            Usta chaqirish
+          Bog'lanish
           </Link>
         </div>
 

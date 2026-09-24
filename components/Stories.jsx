@@ -1,49 +1,40 @@
 'use client';
 import { useState } from 'react';
+import { getDirectusImageUrl } from '@/lib/directus';
 
-export default function Stories() {
+export default function Stories({ stories = [] }) {
   const [activeStory, setActiveStory] = useState(null);
 
-  const stories = [
-    {
-      id: 1,
-      date: '2026-09-10',
-      thumb: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=200&auto=format&fit=crop',
-      media: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1000&auto=format&fit=crop',
-      title: 'Gentra Shumoisolyatsiya jarayoni',
-    },
-    {
-      id: 2,
-      date: '2026-09-09',
-      thumb: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=200&auto=format&fit=crop',
-      media: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1000&auto=format&fit=crop',
-      title: 'Cobalt chexol tikish yakunlandi',
-    },
-  ];
+  if (!stories || stories.length === 0) {
+    return null;
+  }
 
   return (
     <div className="py-3 border-b border-emerald-900/10 mb-6 overflow-x-auto scrollbar-none">
       <div className="flex gap-5 items-center">
-        {stories.map((story) => (
-          <button
-            key={story.id}
-            onClick={() => setActiveStory(story)}
-            className="flex flex-col items-center gap-1.5 group cursor-pointer focus:outline-none shrink-0"
-          >
-            <div className="p-[2.5px] rounded-full bg-gradient-to-tr from-emerald-600 via-teal-500 to-emerald-400 group-hover:scale-105 transition duration-200 shadow-sm">
-              <div className="p-0.5 bg-white rounded-full">
-                <img
-                  src={story.thumb}
-                  alt={story.date}
-                  className="w-14 h-14 rounded-full object-cover"
-                />
+        {stories.map((story) => {
+          const imageUrl = getDirectusImageUrl(story.image);
+          return (
+            <button
+              key={story.id}
+              onClick={() => setActiveStory(story)}
+              className="flex flex-col items-center gap-1.5 group cursor-pointer focus:outline-none shrink-0"
+            >
+              <div className="p-[2.5px] rounded-full bg-gradient-to-tr from-emerald-600 via-teal-500 to-emerald-400 group-hover:scale-105 transition duration-200 shadow-sm">
+                <div className="p-0.5 bg-white rounded-full">
+                  <img
+                    src={imageUrl}
+                    alt={story.title || story.date}
+                    className="w-14 h-14 rounded-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            <span className="text-[11px] font-mono text-slate-600 font-medium">
-              {story.date}
-            </span>
-          </button>
-        ))}
+              <span className="text-[11px] font-mono text-slate-600 font-medium">
+                {story.date}
+              </span>
+            </button>
+          );
+        })}
       </div>
 
       {activeStory && (
@@ -62,12 +53,12 @@ export default function Stories() {
             </div>
 
             <img
-              src={activeStory.media}
+              src={getDirectusImageUrl(activeStory.image)}
               alt={activeStory.title}
               className="absolute inset-0 w-full h-full object-cover"
             />
 
-            <div className="relative z-10 bg-gradient-to-t from-black/80 to-transparent p-4 rounded-b-2xl">
+            <div className="relative z-10 bg-gradient-to-t from-black/80 to-transparent p-4 rounded-b-2xl mt-auto">
               <p className="text-white text-sm font-bold">{activeStory.title}</p>
             </div>
           </div>

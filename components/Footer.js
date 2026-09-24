@@ -8,9 +8,9 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <div className="bg-emerald-600 text-white font-black px-2.5 py-1 rounded-lg text-lg">
-              ANGOR
+              AVTO
             </div>
-            <span className="font-bold text-white text-lg tracking-tight">SERVIS USTA</span>
+            <span className="font-bold text-white text-lg tracking-tight">CHEXOL.uz</span>
           </div>
           <p className="text-xs leading-relaxed text-slate-400">
             Professional ustaxona va sifatli avtoservis xizmatlari. Barcha turdagi ta'mirlash ishlariga rasmiy kafolat beramiz.
@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="space-y-2.5 text-xs">
             <p>📍 Surxondaryo viloyati, Angor tumani</p>
             <p className="text-white font-medium">📞 +998 97 350-39-93</p>
-            <p>✉️ info@angor.uz</p>
+            <p>✉️ info@avtochexol.uz</p>
           </div>
         </div>
 
